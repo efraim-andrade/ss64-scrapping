@@ -1,0 +1,12 @@
+{
+  "name": "ss64-scrapping",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer": "^7.0.4"
+  },
+  "scripts": {
+    "start": "node src/index.js"
+  }
+}
