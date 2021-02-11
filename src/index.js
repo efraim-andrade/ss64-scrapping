@@ -1,6 +1,6 @@
-const puppeteer = require("puppeteer");
+import puppeteer from "https://deno.land/x/puppeteer@5.5.1/mod.ts";
 
-const generateJsonFile = require("./functions/generateJsonFile");
+import generateJsonFile from "./functions/generateJsonFile.ts";
 
 //TODO:
 /**
@@ -50,9 +50,10 @@ const BASE_URL = "https://ss64.com/bash/";
       await page.waitForSelector(".tbtn");
 
       const detailedInfo = await page.evaluate(async () => {
-        const nodeList = document.querySelectorAll("pre");
+        const preNodeList = document.querySelectorAll("pre");
+        const pNodeList = document.querySelectorAll("p");
 
-        const preArray = [...nodeList];
+        const preArray = [...preNodeList, ...pNodeList];
 
         const infoList = preArray.map((paragraph) => paragraph.innerHTML);
 
